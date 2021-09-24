@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.app.focusonbinding.MyViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/lnrRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_marginHorizontal="20dp"
+            android:text="@={myViewModel.getSampleText}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:text="@={myViewModel.getSampleText}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:layout_height="45dp"
+            android:onClick="@{() -> myViewModel.changeSampleText()}"
+            android:text="SAMPLE BUTTON" />
+
+    </LinearLayout>
+
+</layout>
